@@ -1,0 +1,43 @@
+= Standalone RSpec Integration Test Suite
+
+== Introduction
+
+This works is inspired by the idea of https://github.com/thuss/standalone-cucumber. Thanks Todd !
+
+Use this test project layout when you want to test a site that is not rails/sinatra/ruby powered and thus with no comfortable test framework.
+
+I've included a simple search_spec.rb example that uses Google. To switch to use your own development or staging server adjust the URL in spec_helper.rb. I have this example project setup to use Capybara with Webdriver (Selenium) and mechanize but you can easily switch this to use Culerity, Webrat, env-js by editing spec_helper.rb.
+
+Pull requests with updates/enhancements/bug fixes are always welcome!
+
+== Project Layout
+
+* spec/integration/*_spec.rb : RSpec/Steak scenarii
+* spec/spec_helper.rb : configures the driver and the hostname to use
+* spec/support/ : additional configuration
+
+== Prerequisites
+
+* Ruby http://www.ruby-lang.org/en/downloads/
+* Ruby Gems http://rubygems.org/
+* Bundler: sudo gem install bundler rake
+
+== Configuration
+
+* sudo bundle install
+
+== Running Features
+
+* To run all features: rake
+* To run a specific feature: rspec spec/integration/search_spec.rb
+
+== Additional Documentation
+
+* http://relishapp.com/rspec
+* http://github.com/jnicklas/capybara (for actions such as click_link, click_button, etc...)
+* https://github.com/cavalle/steak (for test syntax featue, scenario, ...)
+
+== Contributors
+
+* {Todd Huss}[http://gabrito.com] Original idea
+* {Cédric Darné}[https://github.com/cdarne]
